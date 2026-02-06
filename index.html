@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Flower Day 💐</title>
+<style>
+  body {
+    margin: 0;
+    background: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    color: white;
+    font-family: Arial, sans-serif;
+  }
+
+  img {
+    max-width: 90%;
+    max-height: 90%;
+    cursor: pointer;
+  }
+
+  #message {
+    display: none;
+    text-align: center;
+    font-size: 48px;
+    color: pink;
+    animation: pop 1.5s infinite alternate;
+  }
+
+  @keyframes pop {
+    from { transform: scale(1); }
+    to { transform: scale(1.2); }
+  }
+</style>
+</head>
+<body>
+
+<img id="gif" src="gif1.gif">
+
+<div id="message">
+  ❤️ I love you Alisha ❤️<br>
+  🌹 Happy Flower Day 🌹
+</div>
+
+<script>
+  let gifs = ["gif1.gif", "gif2.gif", "gif3.gif", "gif4.gif"];
+  let index = 0;
+  let img = document.getElementById("gif");
+  let msg = document.getElementById("message");
+
+  img.onclick = () => {
+    index++;
+    if (index < gifs.length) {
+      img.src = gifs[index];
+    } else {
+      img.style.display = "none";
+      msg.style.display = "block";
+    }
+  };
+</script>
+
+</body>
+</html>
